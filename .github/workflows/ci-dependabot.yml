@@ -15,10 +15,10 @@ jobs:
     # Trigger job only for dependency update bot.
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
-    # Permissions needed to push changes back to branch.
+    # Permissions needed to update PR.
     permissions:
+      # Enable creating, updating files
       contents: write
-      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
